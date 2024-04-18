@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
 import { User } from "../models/user";
 import { generateToken } from "../services/authService";
+import { randomUUID } from "crypto";
 
 const hardcodedUser: User = {
-    id: 1,
+    id: randomUUID(),
     username: "usuario",
     password: "clave",
 };

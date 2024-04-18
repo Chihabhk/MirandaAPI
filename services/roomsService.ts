@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Room from "../models/room";
+import { randomUUID } from "crypto";
 
 const filePath = path.join(__dirname, "../data/rooms/rooms.json");
 
@@ -10,7 +11,7 @@ export function getRoomsData(): Room[] {
     return rooms;
 }
 
-export function getRoomById(roomId: number): Room | undefined {
+export function getRoomById(roomId: Room["id"]): Room | undefined {
     const rooms = getRoomsData();
     return rooms.find((room) => room.id === roomId);
 }
@@ -19,7 +20,7 @@ export function createRoomData(room: Room): Room {
     const rooms = getRoomsData();
 
     const newRoom: Room = {
-        id: rooms.length + 1,
+        id: randomUUID(),
         number: room.number,
         type: room.type,
         price: room.price,
@@ -60,7 +61,7 @@ export function updateRoomData(updatedRoom: Room): Room {
         throw new Error("Room not found");
     }
 }
-export function deleteRoomData(roomId: number): void {
+export function deleteRoomData(roomId: Room["id"]): void {
     const rooms = getRoomsData();
 
     const updatedRooms = rooms.filter((room) => room.id !== roomId);

@@ -1,13 +1,11 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
-// import bcrypt from "bcrypt";
-import dotenv from "dotenv";
 import { User } from "../models/user";
-
+import dotenv from "dotenv";
 dotenv.config();
 
-const JWT_SECRET: string = process.env.JWT_SECRET;
+const JWT_SECRET: any = process.env.JWT_SECRET;
 
-export function generateToken(user: User): string {
+export function generateToken(user: User): any {
     const token = jwt.sign(
         { id: user.id, username: user.username },
         JWT_SECRET,
@@ -25,10 +23,3 @@ export function verifyToken(token: string): JwtPayload | string {
         throw new Error("Invalid token");
     }
 }
-
-// export async function comparePasswords(
-//     password: string,
-//     hashedPassword: string
-// ): Promise<boolean> {
-//     return await bcrypt.compare(password, hashedPassword);
-// }

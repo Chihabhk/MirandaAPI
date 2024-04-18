@@ -1,5 +1,5 @@
 interface Room {
-    id: number;
+    id: `${string}-${string}-${string}-${string}-${string}`;
     number: number;
     type: string;
     price: number;

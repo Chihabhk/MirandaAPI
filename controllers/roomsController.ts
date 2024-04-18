@@ -6,13 +6,14 @@ import {
     deleteRoomData,
     getRoomById,
 } from "../services/roomsService";
+import Room from "../models/room";
 
 export function getRooms(req: Request, res: Response) {
     const rooms = getRoomsData();
     res.json(rooms);
 }
 export function getRoom(req: Request, res: Response) {
-    const roomId = parseInt(req.params.id);
+    const roomId = req.params.id as Room["id"];
 
     const room = getRoomById(roomId);
 
@@ -30,7 +31,7 @@ export function createRoom(req: Request, res: Response) {
 }
 
 export function updateRoom(req: Request, res: Response) {
-    const roomId = parseInt(req.params.id);
+    const roomId = req.params.id as Room["id"];
     const updatedFields = req.body;
 
     try {
@@ -54,7 +55,7 @@ export function updateRoom(req: Request, res: Response) {
 }
 
 export function deleteRoom(req: Request, res: Response) {
-    const roomId = parseInt(req.params.id);
+    const roomId = req.params.id as Room["id"];
 
     try {
         deleteRoomData(roomId);
