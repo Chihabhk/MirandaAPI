@@ -12,7 +12,7 @@ app.use(express.json());
 // Routes
 app.use("/auth", authRouter);
 app.use("/rooms", authenticateToken, roomsRouter);
-// app.use("/bookings", bookingsRouter);
+app.use("/bookings", bookingsRouter);
 
 // Public route
 app.get("/", (req, res) => {

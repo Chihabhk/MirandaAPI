@@ -18,7 +18,7 @@
         "roomId": 45,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Double Superior",
+        "type": "Double Bed",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkIn"
     },
@@ -41,7 +41,7 @@
         "roomId": 46,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Single",
+        "type": "Single",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkOut"
     },
@@ -64,7 +64,7 @@
         "roomId": 47,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Double Superior",
+        "type": "Double Bed",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "inProgress"
     },
@@ -87,7 +87,7 @@
         "roomId": 48,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Double Superior",
+        "type": "Double Bed",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "inProgress"
     },
@@ -110,7 +110,7 @@
         "roomId": 49,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Double Superior",
+        "type": "Double Bed",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkIn"
     },
@@ -133,7 +133,7 @@
         "roomId": 50,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Double Superior",
+        "type": "Double Bed",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkIn"
     },
@@ -156,7 +156,7 @@
         "roomId": 51,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Double Superior",
+        "type": "Double Bed",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkOut"
     },
@@ -179,7 +179,7 @@
         "roomId": 52,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Single",
+        "type": "Single",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkOut"
     },
@@ -202,7 +202,7 @@
         "roomId": 53,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Double Superior",
+        "type": "Double Bed",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "inProgress"
     },
@@ -225,7 +225,7 @@
         "roomId": 54,
         "price": 483,
         "amenities": [],
-        "typeRoom": "Single",
+        "type": "Single",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "inProgress"
     }

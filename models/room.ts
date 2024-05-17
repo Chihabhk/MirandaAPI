@@ -1,12 +1,11 @@
 interface Room {
     id: `${string}-${string}-${string}-${string}-${string}`;
+    type: "Double Bed" | "Single" | "Suite" | "Deluxe" | "Twin";
     number: number;
-    type: string;
     price: number;
-    status: boolean;
-    photo: string;
+    photoUrl?: string;
     amenities?: string[];
-    offer?: number;
+    status: "occupied" | "available";
 }
 
 export default Room;

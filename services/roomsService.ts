@@ -25,12 +25,12 @@ export function createRoomData(room: Room): Room {
         type: room.type,
         price: room.price,
         status: room.status,
-        photo: room.photo,
+        photoUrl: room.photoUrl,
         amenities: room.amenities,
-        offer: room.offer,
     };
 
     rooms.push(newRoom);
+
     saveRoomsData(rooms);
 
     return newRoom;
@@ -50,9 +50,8 @@ export function updateRoomData(updatedRoom: Room): Room {
             type: updatedRoom.type,
             price: updatedRoom.price,
             status: updatedRoom.status,
-            photo: updatedRoom.photo,
+            photoUrl: updatedRoom.photoUrl,
             amenities: updatedRoom.amenities,
-            offer: updatedRoom.offer,
         };
 
         saveRoomsData(rooms);

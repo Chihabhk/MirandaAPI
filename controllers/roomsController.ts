@@ -14,7 +14,7 @@ export function getRooms(req: Request, res: Response) {
 }
 export function getRoom(req: Request, res: Response) {
     const roomId = req.params.id as Room["id"];
-
+    0;
     const room = getRoomById(roomId);
 
     if (room) {
