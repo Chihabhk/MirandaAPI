@@ -7,14 +7,13 @@ interface DateFormat {
 export interface Booking {
     id: `${string}-${string}-${string}-${string}-${string}`;
     roomId?: `${string}-${string}-${string}-${string}-${string}`;
-    guest: User;
+    userId: User["id"];
     orderDate: DateFormat;
     checkIn: DateFormat;
     checkOut?: DateFormat;
-
     totalPrice: number;
     typeRoom: "Double Bed" | "Single" | "Suite" | "Deluxe" | "Twin";
-    description: string;
+    notes?: string;
     status: "checkIn" | "checkOut" | "inProgess";
 }
 export default Booking;

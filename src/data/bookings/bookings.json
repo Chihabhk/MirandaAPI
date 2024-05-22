@@ -19,7 +19,7 @@
         "price": 483,
         "amenities": [],
         "type": "Double Bed",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkIn"
     },
     {
@@ -42,7 +42,7 @@
         "price": 483,
         "amenities": [],
         "type": "Single",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkOut"
     },
     {
@@ -65,7 +65,7 @@
         "price": 483,
         "amenities": [],
         "type": "Double Bed",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "inProgress"
     },
     {
@@ -88,7 +88,7 @@
         "price": 483,
         "amenities": [],
         "type": "Double Bed",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "inProgress"
     },
     {
@@ -111,7 +111,7 @@
         "price": 483,
         "amenities": [],
         "type": "Double Bed",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkIn"
     },
     {
@@ -134,7 +134,7 @@
         "price": 483,
         "amenities": [],
         "type": "Double Bed",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkIn"
     },
     {
@@ -157,7 +157,7 @@
         "price": 483,
         "amenities": [],
         "type": "Double Bed",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkOut"
     },
     {
@@ -180,7 +180,7 @@
         "price": 483,
         "amenities": [],
         "type": "Single",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "checkOut"
     },
     {
@@ -203,7 +203,7 @@
         "price": 483,
         "amenities": [],
         "type": "Double Bed",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "inProgress"
     },
     {
@@ -226,7 +226,7 @@
         "price": 483,
         "amenities": [],
         "type": "Single",
-        "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+        "notes": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "status": "inProgress"
     }
 ]

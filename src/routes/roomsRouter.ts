@@ -6,7 +6,6 @@ import {
     deleteRoom,
     getRoom,
 } from "../controllers/roomsController";
-import { authenticateToken } from "../middleware/auth";
 
 const roomsRouter = express.Router();
 

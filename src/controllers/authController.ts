@@ -7,6 +7,7 @@ const hardcodedUser: User = {
     id: randomUUID(),
     username: "usuario",
     password: "clave",
+    role: "admin",
 };
 
 export function login(req: Request, res: Response) {

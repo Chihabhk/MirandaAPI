@@ -3,11 +3,7 @@ import { Request, Response, NextFunction } from "express";
 
 const secretKey = process.env.JWT_SECRET || "secretkey";
 
-export function authenticateToken(
-    req: Request,
-    res: Response,
-    next: NextFunction
-) {
+export function authenticateToken(req: Request, res: Response) {
     const token = req.headers["authorization"]?.split(" ")[1];
 
     if (!token) {
@@ -20,6 +16,5 @@ export function authenticateToken(
         }
 
         (req as any).user = decoded;
-        next();
     });
 }

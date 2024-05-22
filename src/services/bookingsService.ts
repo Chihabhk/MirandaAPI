@@ -22,9 +22,12 @@ export function createBookingData(booking: Booking): Booking {
     const newBooking: Booking = {
         id: randomUUID(),
         roomId: booking.roomId,
-        UserId: booking.UserId,
-        checkInDate: booking.checkIn,
-        checkOutDate: booking.checkOut,
+        totalPrice: booking.totalPrice,
+        typeRoom: "Double Bed",
+        orderDate: booking.orderDate,
+        userId: booking.userId,
+        checkIn: booking.checkIn,
+        checkOut: booking?.checkOut,
         status: booking.status,
     };
 
@@ -45,9 +48,9 @@ export function updateBookingData(updatedBooking: Booking): Booking {
         bookings[existingBookingIndex] = {
             ...bookings[existingBookingIndex],
             roomId: updatedBooking.roomId,
-            UserId: updatedBooking.UserId,
-            checkInDate: updatedBooking.checkInDate,
-            checkOutDate: updatedBooking.checkOutDate,
+            userId: updatedBooking.userId,
+            checkIn: updatedBooking.checkIn,
+            checkOut: updatedBooking?.checkOut,
             totalPrice: updatedBooking.totalPrice,
             status: updatedBooking.status,
         };

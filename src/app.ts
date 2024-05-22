@@ -1,10 +1,10 @@
-import express from "express";
+import express, { Application } from "express";
 import roomsRouter from "./routes/roomsRouter";
 import bookingsRouter from "./routes/bookingsRouter";
 import authRouter from "./routes/authRouter";
 import { authenticateToken } from "./middleware/auth";
 
-const app = express();
+const app: Application = express();
 
 // Middleware
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(express.json());
 // Routes
 app.use("/auth", authRouter);
 app.use("/rooms", authenticateToken, roomsRouter);
-app.use("/bookings", bookingsRouter);
+app.use("/bookings", authenticateToken, bookingsRouter);
 
 // Public route
 app.get("/", (req, res) => {
