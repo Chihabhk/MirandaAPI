@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const bookingSchema = new Schema({
-    _id: String,
+    _id: { type: String, required: true },
     name: String,
     email: String,
     password: String,

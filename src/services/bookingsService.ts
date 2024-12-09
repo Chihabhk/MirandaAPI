@@ -1,18 +1,35 @@
 import { randomUUID } from "crypto";
-import { Booking } from "../db/bookingSchema";
+import { BookingInterface } from "../interfaces/bookingInterface";
 
-export function getBookingsData() {
-    return bookings;
+export async function getBookingsData(): Promise<BookingInterface[]> {
+    const uri = "mongodb://localhost:27017";
+    const client = new MongoClient(uri);
+
+    try {
+        await client.connect();
+
+        const database = client.db("your_database_name");
+        const collection = database.collection("your_collection_name");
+
+        const bookings = await collection.find().toArray();
+
+        return bookings;
+    } catch (error) {
+        console.error("Error retrieving bookings data:", error);
+        throw error;
+    } finally {
+        await client.close();
+    }
 }
 
 export function getBookingById(
-    bookingId: (typeof Booking)["_id"]
-): Booking | undefined {
+    bookingId: string
+): BookingInterface | undefined {
     const bookings = getBookingsData();
     return bookings.find((booking) => booking.id === bookingId);
 }
 
-export function createBookingData(booking: Booking): Booking {
+export function createBookingData(booking: BookingInterface): BookingInterface {
     const bookings = getBookingsData();
 
     const newBooking: Booking = {
