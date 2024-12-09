@@ -1,31 +1,18 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteBookingData = exports.updateBookingData = exports.createBookingData = exports.getBookingById = exports.getBookingsData = void 0;
-const fs_1 = __importDefault(require("fs"));
-const path_1 = __importDefault(require("path"));
-const crypto_1 = require("crypto");
-const filePath = path_1.default.join(__dirname, "../data/bookings/bookings.json");
-function getBookingsData() {
-    const fileContent = fs_1.default.readFileSync(filePath, "utf-8");
-    const bookings = JSON.parse(fileContent);
+import { randomUUID } from "crypto";
+export function getBookingsData() {
     return bookings;
 }
-exports.getBookingsData = getBookingsData;
-function getBookingById(bookingId) {
+export function getBookingById(bookingId) {
     const bookings = getBookingsData();
     return bookings.find((booking) => booking.id === bookingId);
 }
-exports.getBookingById = getBookingById;
-function createBookingData(booking) {
+export function createBookingData(booking) {
     const bookings = getBookingsData();
     const newBooking = {
-        id: (0, crypto_1.randomUUID)(),
+        id: randomUUID(),
         roomId: booking.roomId,
         totalPrice: booking.totalPrice,
-        typeRoom: "Double Bed",
+        typeRoom: booking.typeRoom,
         orderDate: booking.orderDate,
         userId: booking.userId,
         checkIn: booking.checkIn,
@@ -36,8 +23,7 @@ function createBookingData(booking) {
     saveBookingsData(bookings);
     return newBooking;
 }
-exports.createBookingData = createBookingData;
-function updateBookingData(updatedBooking) {
+export function updateBookingData(updatedBooking) {
     const bookings = getBookingsData();
     const existingBookingIndex = bookings.findIndex((booking) => booking.id === updatedBooking.id);
     if (existingBookingIndex !== -1) {
@@ -49,8 +35,7 @@ function updateBookingData(updatedBooking) {
         throw new Error("Booking not found");
     }
 }
-exports.updateBookingData = updateBookingData;
-function deleteBookingData(bookingId) {
+export function deleteBookingData(bookingId) {
     const bookings = getBookingsData();
     const updatedBookings = bookings.filter((booking) => booking.id !== bookingId);
     if (updatedBookings.length !== bookings.length) {
@@ -60,10 +45,9 @@ function deleteBookingData(bookingId) {
         throw new Error("Booking not found");
     }
 }
-exports.deleteBookingData = deleteBookingData;
 function saveBookingsData(bookings) {
     const jsonData = JSON.stringify(bookings);
-    fs_1.default.writeFile(filePath, jsonData, (err) => {
+    fs.writeFile(filePath, jsonData, (err) => {
         if (err) {
             console.error("Error al guardar los datos de las reservas:", err);
         }

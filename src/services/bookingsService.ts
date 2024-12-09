@@ -1,17 +1,13 @@
-import fs from "fs";
-import path from "path";
-import Booking from "../models/booking";
 import { randomUUID } from "crypto";
+import { Booking } from "../db/bookingSchema";
 
-const filePath = path.join(__dirname, "../data/bookings/bookings.json");
-
-export function getBookingsData(): Booking[] {
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-    const bookings: Booking[] = JSON.parse(fileContent);
+export function getBookingsData() {
     return bookings;
 }
 
-export function getBookingById(bookingId: Booking["id"]): Booking | undefined {
+export function getBookingById(
+    bookingId: (typeof Booking)["_id"]
+): Booking | undefined {
     const bookings = getBookingsData();
     return bookings.find((booking) => booking.id === bookingId);
 }
@@ -23,7 +19,7 @@ export function createBookingData(booking: Booking): Booking {
         id: randomUUID(),
         roomId: booking.roomId,
         totalPrice: booking.totalPrice,
-        typeRoom: "Double Bed",
+        typeRoom: booking.typeRoom,
         orderDate: booking.orderDate,
         userId: booking.userId,
         checkIn: booking.checkIn,

@@ -1,15 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteBooking = exports.updateBooking = exports.createBooking = exports.getBooking = exports.getBookings = void 0;
-const bookingsService_1 = require("../services/bookingsService");
-function getBookings(req, res) {
-    const bookings = (0, bookingsService_1.getBookingsData)();
+import { getBookingsData, createBookingData, updateBookingData, deleteBookingData, getBookingById, } from "../services/bookingsService";
+export function getBookings(req, res) {
+    const bookings = getBookingsData();
     res.json(bookings);
 }
-exports.getBookings = getBookings;
-function getBooking(req, res) {
+export function getBooking(req, res) {
     const bookingId = req.params.id;
-    const booking = (0, bookingsService_1.getBookingById)(bookingId);
+    const booking = getBookingById(bookingId);
     if (booking) {
         res.json(booking);
     }
@@ -17,38 +13,34 @@ function getBooking(req, res) {
         res.status(404).json({ message: "Booking not found" });
     }
 }
-exports.getBooking = getBooking;
-function createBooking(req, res) {
+export function createBooking(req, res) {
     const booking = req.body;
-    const createdBooking = (0, bookingsService_1.createBookingData)(booking);
+    const createdBooking = createBookingData(booking);
     res.json(createdBooking);
 }
-exports.createBooking = createBooking;
-function updateBooking(req, res) {
+export function updateBooking(req, res) {
     const bookingId = req.params.id;
     const updatedFields = req.body;
     try {
-        const booking = (0, bookingsService_1.getBookingById)(bookingId);
+        const booking = getBookingById(bookingId);
         if (!booking) {
             return res.status(404).json({ message: "Booking not found" });
         }
         const updatedBooking = Object.assign(Object.assign({}, booking), updatedFields);
-        const updatedBookingData = (0, bookingsService_1.updateBookingData)(updatedBooking);
+        const updatedBookingData = updateBookingData(updatedBooking);
         res.json(updatedBookingData);
     }
     catch (error) {
         res.status(500).json({ message: "Error updating booking data" });
     }
 }
-exports.updateBooking = updateBooking;
-function deleteBooking(req, res) {
+export function deleteBooking(req, res) {
     const bookingId = req.params.id;
     try {
-        (0, bookingsService_1.deleteBookingData)(bookingId);
+        deleteBookingData(bookingId);
         res.json({ message: "Booking deleted successfully" });
     }
     catch (error) {
         res.status(404).json({ message: "Booking not found" });
     }
 }
-exports.deleteBooking = deleteBooking;

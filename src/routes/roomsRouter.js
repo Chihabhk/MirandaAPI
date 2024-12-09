@@ -1,14 +1,9 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const roomsController_1 = require("../controllers/roomsController");
-const roomsRouter = express_1.default.Router();
-roomsRouter.get("/", roomsController_1.getRooms);
-roomsRouter.get("/:id", roomsController_1.getRoom);
-roomsRouter.post("/", roomsController_1.createRoom);
-roomsRouter.put("/:id", roomsController_1.updateRoom);
-roomsRouter.delete("/:id", roomsController_1.deleteRoom);
-exports.default = roomsRouter;
+import express from "express";
+import { getRooms, createRoom, updateRoom, deleteRoom, getRoom, } from "../controllers/roomsController";
+const roomsRouter = express.Router();
+roomsRouter.get("/", getRooms);
+roomsRouter.get("/:id", getRoom);
+roomsRouter.post("/", createRoom);
+roomsRouter.put("/:id", updateRoom);
+roomsRouter.delete("/:id", deleteRoom);
+export default roomsRouter;

@@ -1,10 +1,10 @@
-import express, { Application } from "express";
+import express from "express";
 import roomsRouter from "./routes/roomsRouter";
 import bookingsRouter from "./routes/bookingsRouter";
 import authRouter from "./routes/authRouter";
 import { authenticateToken } from "./middleware/auth";
 
-const app: Application = express();
+const app = express();
 
 // Middleware
 app.use(express.json());

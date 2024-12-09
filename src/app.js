@@ -1,20 +1,15 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const roomsRouter_1 = __importDefault(require("./routes/roomsRouter"));
-const bookingsRouter_1 = __importDefault(require("./routes/bookingsRouter"));
-const authRouter_1 = __importDefault(require("./routes/authRouter"));
-const auth_1 = require("./middleware/auth");
-const app = (0, express_1.default)();
+import express from "express";
+import roomsRouter from "./routes/roomsRouter";
+import bookingsRouter from "./routes/bookingsRouter";
+import authRouter from "./routes/authRouter";
+import { authenticateToken } from "./middleware/auth";
+const app = express();
 // Middleware
-app.use(express_1.default.json());
+app.use(express.json());
 // Routes
-app.use("/auth", authRouter_1.default);
-app.use("/rooms", auth_1.authenticateToken, roomsRouter_1.default);
-app.use("/bookings", auth_1.authenticateToken, bookingsRouter_1.default);
+app.use("/auth", authRouter);
+app.use("/rooms", authenticateToken, roomsRouter);
+app.use("/bookings", authenticateToken, bookingsRouter);
 // Public route
 app.get("/", (req, res) => {
     const hotelName = "Miranda Hotel";
@@ -25,4 +20,4 @@ app.get("/", (req, res) => {
     ];
     res.json({ hotelName, endpoints });
 });
-exports.default = app;
+export default app;

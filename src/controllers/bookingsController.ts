@@ -6,7 +6,6 @@ import {
     deleteBookingData,
     getBookingById,
 } from "../services/bookingsService";
-import Booking from "../models/booking";
 
 export function getBookings(req: Request, res: Response) {
     const bookings = getBookingsData();
@@ -14,7 +13,7 @@ export function getBookings(req: Request, res: Response) {
 }
 
 export function getBooking(req: Request, res: Response) {
-    const bookingId = req.params.id as Booking["id"];
+    const bookingId = req.params.id;
 
     const booking = getBookingById(bookingId);
 
@@ -32,7 +31,7 @@ export function createBooking(req: Request, res: Response) {
 }
 
 export function updateBooking(req: Request, res: Response) {
-    const bookingId = req.params.id as Booking["id"];
+    const bookingId = req.params.id;
     const updatedFields = req.body;
 
     try {
@@ -56,7 +55,7 @@ export function updateBooking(req: Request, res: Response) {
 }
 
 export function deleteBooking(req: Request, res: Response) {
-    const bookingId = req.params.id as Booking["id"];
+    const bookingId = req.params.id;
 
     try {
         deleteBookingData(bookingId);
